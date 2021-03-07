@@ -1,0 +1,13 @@
+{% extends 'layouts/layout.html' %} {% comment "" %}la dobre {{}} sirve para usar variables que vengan desde python{% endcomment %}
+
+{% block title %}
+    {{category.name}}
+{% endblock title %}
+
+{% block content %}
+    <h1>{{category.name}}</h1>
+    <p>{{category.description}}</p>
+
+    {% include 'articles/articles.html' with articles=category.article_set.all %}  {# con with se le pasa la variable articles a la vista articles.html #}
+                                            {# article_set corresponde al nombre del MODELO PERO SIN LA MAYUSCULA #}
+{% endblock content %} 

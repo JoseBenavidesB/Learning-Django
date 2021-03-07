@@ -1,0 +1,269 @@
+/*ESTILO generales, el asterisco selecciona a todos los elementos de la pagina*/
+
+*{
+    margin: 0%;
+    padding: 0%;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+}
+
+p{
+    margin-top: 1%;
+    margin-bottom: 5%;
+    color: green;
+}
+
+body{
+    background-color: rgb(227, 235, 228);
+}
+
+/*estilos a la cabecera*/
+
+header{
+    width: 80%;
+    height: 20%;
+    background-color: rgb(66, 65, 65);
+    margin: 0% auto;
+}
+#logotipo{
+    width: 100%;
+    height: 0%;
+    margin: 0 auto;
+}
+
+#logotipo img{
+    display: block;
+    width: 5%;
+    float: left;
+    margin-top: 2px;
+}
+
+#logotipo h1{
+    display: block;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: rgb(7, 131, 90);
+    text-align: center;
+
+}
+
+/*estilos al nav*/
+
+nav{
+    width: 85%;
+    height: 40px;
+    background-color: rgb(46, 48, 47);
+    border: 3px solid rgb(51, 51, 50);
+    margin: 0 auto;
+    box-shadow: 0px 22px 22px gray;
+    font-size: 13px;
+}
+
+nav > ul{
+    list-style: none;
+    text-decoration: none;
+}
+
+nav > ul > li{
+    line-height: 40px;
+    float: left;
+}
+
+nav > ul > li > a{
+    display: block;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: lightgreen;
+
+}
+
+nav > ul > li > a:hover{
+    background: lightgrey;
+    box-shadow: 0px 0px 5px gray;
+    color: white;
+    transition: all 300ms;
+
+}
+
+nav > ul > li > ul{
+
+    display: none;
+    position: absolute;
+    color: white;
+    text-align: left;
+    width: 160px;
+    box-shadow: 0px 2px 2px gray;
+}
+
+nav > ul > li:hover > ul{
+    display: block;
+    color: white;
+    margin: 0px;
+    list-style: none;
+}
+
+/* el hover es para cuando yo pase por encima se aplique*/
+nav > ul > li:hover > ul > li{
+    background: #f2f1f0;
+    border-bottom: 1px solid #d6d6d6;
+    padding: 8px;
+    line-height: 25px;
+    font-size: 13px;
+    transition: all 300ms;
+}
+
+
+nav > ul > li:hover > ul > li a{
+   color: #666;
+   transition: all 300ms;
+}
+
+nav > ul > li:hover > ul > li:hover{
+    background-color: rgb(14, 168, 148);
+ }
+
+ nav > ul > li:hover > ul > li:hover a{
+    display: block;
+    color: rgb(158, 31, 31);
+ }
+/*estilos contenido central*/
+
+#content{
+    width: 80%;
+    min-height: 150%;
+    margin: 0 auto;
+    margin-top: 20px;
+
+}
+
+.box{
+    background: white;
+    width: 85%;
+    min-height: 100%;
+    padding: 20px;
+    border: 1px solid whitesmoke;
+    margin: 0 auto;
+    border-radius: 2px;
+}
+.box .image{
+    height: 200px;
+    width: 200px;
+    float: left;
+    overflow: hidden;
+}
+
+.box .image img{
+    width: 100%;
+}
+
+.box a{
+    color: teal;
+}
+
+.box a:hover{
+    transition: all 100ms;
+    color: rgb(6, 221, 78);
+}
+
+
+.clearfix{
+
+    clear: both;
+    float: none;
+}
+.box form{
+
+    width: 50%;
+
+}
+
+.box form input,
+.box form label{
+    display: block;
+    padding: 5px;
+    padding-left: 0px;
+    width: 100%;
+    
+}
+
+.box form input [type = "text"],
+.box form input [type = "email"],
+.box form input [type = "password"],
+.box form textarea,
+.box form select{
+    
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+
+.title{
+    color: gray;
+    letter-spacing: 2px;
+    font-size: 30px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    
+}
+
+.article-item{
+    margin-bottom: 20px;
+    margin-top: 20px;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    clear: both;
+}
+
+.article-item .image{
+    height: 200px;
+    width: 200px;
+    float: left;
+    overflow: hidden;
+
+}
+
+.article-item .image img{
+
+    height: 200px;
+
+}
+
+.article-item .data{
+
+    float: left;
+    padding: 15px;
+}
+
+footer{
+    width: 75%;
+    background-color: rgb(66, 65, 65);
+    border: 1px solid black;
+    color: rgb(130, 190, 148);
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: 0 auto;
+    box-shadow: 0px 0px 20px gray;
+}
+
+.rojo{
+
+    color: red;
+    text-shadow: 0px 0px 1px rgb(255, 255, 255);
+}
+
+.message,
+.alert-success,
+.alert{
+    padding: 20px;
+    background: rgb(0, 217, 255);
+    color: rgb(75, 14, 173);
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.alert-warning{
+    background: rgb(136, 47, 47);
+}
+

@@ -1,0 +1,48 @@
+{% for item in articles %}
+    <article class="article-item">
+
+        {% if item.image != 'null' and item.image.url|length >= 1%}
+            
+            <div class="image">  
+            <img src="{{item.image.url}}"/>
+            </div>                
+
+        {% endif %}
+
+        <div class="data">
+            <h2>
+               <a href="{% url 'article_from_blog_view' item.id %}" >
+               Titulo: {{item.title}}
+               </a>
+            
+            </h2>
+
+            <p>
+                {% for categoria in item.catogories.all %}
+
+                    <a href="{% url 'category_from_url_blog' categoria.id %}"> {{categoria.name}}</a>
+
+                    {% if forloop.counter < item.catogories.all|length%}
+                    -
+                    {%endif%}
+            
+                {% endfor %}
+            </p>
+
+            <span>
+
+                {{item.user}} {% comment "" %} puedo usar user.name para mostrar nombre, ejemplo para acceder a propiedades{% endcomment %}
+                |
+                Creado el: {{item.created_at}}
+            </span>
+            
+            <p>Descripción: {{item.content|safe}} </p> {% comment "" %} |este simbolo es para aplicar safe{% endcomment %}
+            
+        </div>
+    
+        <div class="clearfix"></div>
+
+    </article>
+    
+
+{% endfor %}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+  
+  <head>
+    <meta charset="utf-8" />
+    
+    <title>
+      {% block title %} <!-- Titutlo de cada pagina--> {% endblock %} |Jose
+    </title>
+    
+    {% load static %}
+    <!--para cargar la carpeta static donde esta css-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/styles.css'%}"
+    />
+  </head>
+
+  <body>
+    <!--cabecera de la pagina-->
+    <header>
+      <div id="logotipo">
+        <img src="{% static 'imagenes/logo.png'%}" />
+        <h1>Proyecto Web</h1>
+      </div>
+    </header>
+
+    <nav>
+      <ul>
+        
+        <li>
+          <a href="{% url 'inicio' %}">Inicio</a>
+        </li>
+        {% if user.email %}
+          <li>
+            <a href="{% url 'list' %}">Categorías</a>
+            <ul>
+                {% for category in categories_from_processor_blog %}
+                  <li>
+                    <a href="{% url 'category_from_url_blog' category.0 %}">{{category.1}}</a>
+                  </li>
+                {% endfor %}
+            </ul>
+          </li>
+
+          {% for page in pages %}
+            <li>
+              <a href="{% url 'page_from_url_page' page.2 %}">{{page.1}}</a>
+            </li>
+          {% endfor %}
+
+          <li>
+          <a href="{% url 'logout' %}">Cerrar Sesión</a>
+        </li>
+
+        
+        {% else %}
+        <li>
+          <a href="{% url 'register' %}">Registro</a>
+        </li>
+
+        <li>
+          <a href="{% url 'login' %}">Identificate</a>
+        </li>
+
+        {% endif %}
+
+      </ul>
+    </nav>
+
+    <div id="content">
+      
+      <div class="box">
+        {% block content %}
+        <strong>Contenido del bloque original es machacado por el content en otra pagína</strong>
+        <!--Aqui va ir codigo que viene de templates, estos son bloques-->
+        {% endblock %}
+      </div>
+    
+    </div>
+
+    <footer>Master en Python &copy; Jose Benavides {% now "Y/m/d" %}</footer>
+  </body>
+</html>

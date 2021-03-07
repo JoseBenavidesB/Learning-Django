@@ -1,0 +1,32 @@
+{% extends 'layouts/layout.html' %} {% comment "" %}la dobre {{}} sirve para usar variables que vengan desde python{% endcomment %}
+
+{% block title %}
+    {{title}}
+{% endblock title %}
+    {% block content %}
+    <h1>{{title}}</h1>
+        <hr/>
+    {% if messages %}
+        {% for message in  messages%}
+            <div class="alert alert-success">
+                {{message}}
+            </div>
+        {% endfor %}
+    {% endif %}
+
+    {% if user.email %}
+
+        <h2>Bienvenido, {{request.user.first_name}}</h2>
+
+    {% else %}
+        <h2>Identificate para ver mas cosas</h2>
+
+    {% endif %}
+    
+
+
+
+
+<P>Aqui debería ir algo, pero todavia no se me ocurre que poner asi que pegare esto:</P>
+<p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ullamcorper purus at ultricies finibus. Cras ornare, ligula sed pulvinar fermentum, ante sapien sodales sem, at fermentum orci tortor ut risus. Morbi viverra ut dui nec lobortis. Donec ut aliquam lacus. Mauris at arcu nec sapien commodo commodo. Nullam leo ante, blandit eget posuere sed, convallis in quam. Proin egestas feugiat nisi, fermentum accumsan dui lobortis sit amet. Phasellus quis eros aliquam, ultricies arcu et, sodales justo. Vivamus sed fringilla velit, eu elementum augue. Phasellus dignissim erat orci, at scelerisque erat vulputate in. Nullam non molestie quam. Sed et pulvinar enim, eleifend sollicitudin nibh. </p>
+{% endblock content %} 
